@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | CODETURIST</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Fuente y colores base mejorados - COLORES ORIGINALES */
+    :root {
+      --verde-prado: #27ae60;
+      --azul-celeste: #3498db;
+      --gris-claro: #f8f9fa;
+      --texto-oscuro: #2c3e50;
+      --sombra: 0 8px 30px rgba(0, 0, 0, 0.12);
+      --sombra-intensa: 0 15px 40px rgba(0, 0, 0, 0.2);
+      --dorado: #f1c40f;
+      --naranja: #e67e22;
+      --degradado-principal: linear-gradient(135deg, var(--verde-prado), var(--azul-celeste));
+      --degradado-secundario: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--gris-claro);
+      color: var(--texto-oscuro);
+      line-height: 1.7;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(46, 204, 113, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(93, 173, 226, 0.05) 0%, transparent 20%);
+    }
+
+    /* Encabezado mejorado con movimiento más lento */
+    header {
+      background: var(--degradado-principal);
+      color: white;
+      text-align: center;
+      padding: 1.8rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: fadeInDown 1.5s ease, breathing 6s ease-in-out infinite;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Efecto de respiración más lento y suave */
+    @keyframes breathing {
+      0%, 100% {
+        opacity: 1;
+        border-radius: 0% 0% 0% 0%;
+        transform: scale(1);
+      }
+      25% {
+        opacity: 0.97;
+        border-radius: 5% 8% 10% 6%;
+        transform: scale(1.002);
+      }
+      50% {
+        opacity: 0.99;
+        border-radius: 8% 5% 6% 10%;
+        transform: scale(1.005);
+      }
+      75% {
+        opacity: 0.97;
+        border-radius: 6% 10% 8% 5%;
+        transform: scale(1.002);
+      }
+    }
+
+    header .logo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin: 0;
+      letter-spacing: 1.5px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      font-weight: 700;
+      animation: textGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes textGlow {
+      0%, 100% {
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        transform: scale(1);
+      }
+      50% {
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.3), 0 0 15px rgba(255,255,255,0.2);
+        transform: scale(1.01);
+      }
+    }
+
+    header .logo p {
+      margin: 0.5rem 0 0 0;
+      font-size: 1.2rem;
+      font-weight: 400;
+      opacity: 0.9;
+      animation: slideIn 1.8s ease-out;
+    }
+
+    /* Navegación mejorada con transiciones más lentas */
+    nav ul {
+      list-style: none;
+      margin: 1.8rem 0 0 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: rgba(255, 255, 255, 0.1);
+      font-weight: 500;
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1.2s ease-out;
+      animation-fill-mode: both;
+    }
+
+    nav ul li:nth-child(1) a { animation-delay: 0.2s; }
+    nav ul li:nth-child(2) a { animation-delay: 0.4s; }
+    nav ul li:nth-child(3) a { animation-delay: 0.6s; }
+    nav ul li:nth-child(4) a { animation-delay: 0.8s; }
+    nav ul li:nth-child(5) a { animation-delay: 1.0s; }
+    nav ul li:nth-child(6) a { animation-delay: 1.2s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    nav ul li a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.6s;
+    }
+
+    nav ul li a:hover::before,
+    nav ul li a.activo::before {
+      left: 100%;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.activo {
+      background: white;
+      color: var(--verde-prado);
+      font-weight: 600;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hero principal mejorado con animaciones más lentas */
+    .hero {
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+        url("https://images.unsplash.com/photo-1571068316343-cb1ea3186d83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80") center/cover;
+      color: white;
+      text-align: center;
+      padding: 10rem 1.5rem;
+      position: relative;
+      animation: fadeIn 2s ease;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--degradado-principal);
+      opacity: 0.3;
+      z-index: 1;
+      animation: gentlePulse 8s ease-in-out infinite;
+    }
+
+    @keyframes gentlePulse {
+      0%, 100% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 0.4;
+      }
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      animation: slideInUp 1.5s ease;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero-text p {
+      font-size: 1.6rem;
+      margin-bottom: 2.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: slideInUp 2s ease;
+      font-weight: 400;
+      opacity: 0.95;
+    }
+
+    .btn {
+      background: var(--degradado-principal);
+      color: white;
+      text-decoration: none;
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: inline-block;
+      font-size: 1.3rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      animation: gentlePulseBtn 4s infinite;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes gentlePulseBtn {
+      0% { transform: scale(1); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); }
+      50% { transform: scale(1.03); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25); }
+      100% { transform: scale(1); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); }
+    }
+
+    .btn:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      animation: none;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: 0.8s;
+    }
+
+    .btn:hover::after {
+      left: 100%;
+    }
+
+    /* Secciones de contenido mejoradas con transiciones más lentas */
+    main {
+      max-width: 1300px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .seccion {
+      background: white;
+      border-radius: 20px;
+      box-shadow: var(--sombra);
+      padding: 4rem;
+      margin-bottom: 4rem;
+      transition: all 0.6s ease;
+      opacity: 0;
+      transform: translateY(40px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .seccion::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--degradado-principal);
+      transition: width 0.6s ease;
+    }
+
+    .seccion:hover::before {
+      width: 8px;
+    }
+
+    .seccion.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+
+    .seccion:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--sombra-intensa);
+    }
+
+    .titulo-seccion {
+      color: var(--texto-oscuro);
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 3rem;
+      position: relative;
+      font-weight: 700;
+    }
+
+    .titulo-seccion::after {
+      content: '';
+      display: block;
+      width: 120px;
+      height: 6px;
+      background: var(--degradado-principal);
+      margin: 1.5rem auto;
+      border-radius: 3px;
+      animation: expandWidth 1.5s ease;
+    }
+
+    /* Formulario de contacto mejorado */
+    .formulario-contacto {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+      color: var(--texto-oscuro);
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 1.2rem 1.5rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-family: 'Montserrat', sans-serif;
+      transition: all 0.4s ease;
+      background-color: #f9f9f9;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--verde-prado);
+      background-color: white;
+      box-shadow: 0 5px 15px rgba(39, 174, 96, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .form-group textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
+
+    .form-group .input-icon {
+      position: absolute;
+      right: 20px;
+      top: 50px;
+      color: var(--verde-prado);
+      font-size: 1.2rem;
+      opacity: 0.7;
+      transition: all 0.3s;
+    }
+
+    .form-group:focus-within .input-icon {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .btn-enviar {
+      background: var(--degradado-principal);
+      color: white;
+      border: none;
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      font-size: 1.2rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      display: block;
+      width: 100%;
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-enviar:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-enviar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: 0.7s;
+    }
+
+    .btn-enviar:hover::after {
+      left: 100%;
+    }
+
+    .btn-enviar:disabled {
+      background: #bdc3c7;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .btn-enviar:disabled:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Información de contacto */
+    .info-contacto {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+
+    .tarjeta-contacto {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: var(--sombra);
+      transition: transform 0.6s, box-shadow 0.6s;
+      position: relative;
+      overflow: hidden;
+      border-top: 5px solid var(--verde-prado);
+    }
+
+    .tarjeta-contacto::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--degradado-principal);
+    }
+
+    .tarjeta-contacto:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      border-top: 5px solid var(--azul-celeste);
+    }
+
+    .icono-contacto {
+      font-size: 3.5rem;
+      color: var(--verde-prado);
+      margin-bottom: 1.5rem;
+      transition: transform 0.6s ease;
+    }
+
+    .tarjeta-contacto:hover .icono-contacto {
+      transform: scale(1.1);
+    }
+
+    .tarjeta-contacto h3 {
+      color: var(--azul-celeste);
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .tarjeta-contacto p {
+      color: var(--texto-oscuro);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* Mensajes de validación */
+    .mensaje-error {
+      color: #e74c3c;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .mensaje-exito {
+      background: var(--degradado-principal);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 2rem;
+      display: none;
+      animation: slideInUp 0.5s ease;
+    }
+
+    .campo-error {
+      border-color: #e74c3c !important;
+    }
+
+    .campo-valido {
+      border-color: var(--verde-prado) !important;
+    }
+
+    /* Animaciones mejoradas y más lentas */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes expandWidth {
+      from { width: 0; }
+      to { width: 120px; }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Pie de página mejorado */
+    footer {
+      background: var(--degradado-principal);
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+      margin-top: 5rem;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+      background-size: cover;
+    }
+
+    .footer-contenido {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      text-align: left;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-info h3 {
+      color: white;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .footer-info p {
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    .redes-sociales {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .redes-sociales a {
+      color: white;
+      background: rgba(255, 255, 255, 0.15);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.6s ease;
+      font-size: 1.3rem;
+      backdrop-filter: blur(5px);
+    }
+
+    .redes-sociales a:hover {
+      background: white;
+      color: var(--verde-prado);
+      transform: translateY(-5px) scale(1.08);
+    }
+
+    .footer-enlaces h4,
+    .footer-contacto h4 {
+      color: white;
+      margin-bottom: 1.8rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .footer-enlaces ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-enlaces li {
+      margin-bottom: 1rem;
+    }
+
+    .footer-enlaces a {
+      color: rgba(255, 255, 255, 0.85);
+      transition: all 0.5s ease;
+      position: relative;
+      padding-left: 1.5rem;
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    .footer-enlaces a::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      transition: transform 0.5s;
+      font-weight: bold;
+    }
+
+    .footer-enlaces a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .footer-enlaces a:hover::before {
+      transform: translateX(5px);
+    }
+
+    .footer-contacto p {
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+    }
+
+    .footer-contacto i {
+      margin-right: 1.2rem;
+      width: 20px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .footer-copy {
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      padding-top: 2.5rem;
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 1rem;
+      opacity: 0.8;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Adaptabilidad mejorada */
+    @media (max-width: 1024px) {
+      .hero-text h2 {
+        font-size: 3.2rem;
+      }
+      
+      .hero-text p {
+        font-size: 1.4rem;
+      }
+      
+      .seccion {
+        padding: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 7rem 1rem;
+      }
+
+      .hero-text h2 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-text p {
+        font-size: 1.2rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav ul li a {
+        display: block;
+        width: 220px;
+        margin: 0 auto;
+      }
+
+      .footer-contenido {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+      }
+
+      .redes-sociales {
+        justify-content: center;
+      }
+      
+      .footer-enlaces ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .footer-contacto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header .logo h1 {
+        font-size: 2.2rem;
+      }
+      
+      .titulo-seccion {
+        font-size: 2.2rem;
+      }
+      
+      .seccion {
+        padding: 2rem;
+      }
+      
+      .info-contacto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>CODETURIST</h1>
+      <p>Nariño,entre montañas y raíces, nace el turismo del futuro.</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="ecoturismo.html">Ecoturismo</a></li>
+        <li><a href="cultura-tradicion.html">Cultura y Tradición</a></li>
+        <li><a href="ebike.html">Ebike</a></li>
+        <li><a href="turismo-extranjero.html">Turismo Extranjero</a></li>
+        <li><a href="contacto.html" class="activo">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Contáctanos</h2>
+      <p>¿Tienes preguntas o deseas reservar una experiencia? ¡Estamos aquí para ayudarte!</p>
+      <a href="#formulario" class="btn">Escribir Mensaje</a>
+    </div>
+  </section>
+
+  <main>
+    <section class="seccion intro visible">
+      <h2 class="titulo-seccion">¿Cómo podemos ayudarte?</h2>
+      <p>
+        En CODETURIST estamos comprometidos con ofrecerte la mejor experiencia turística en Nariño. 
+        Si tienes preguntas sobre nuestros servicios, deseas hacer una reserva o simplemente quieres 
+        conocer más sobre nuestras opciones de turismo sostenible, no dudes en contactarnos.
+      </p>
+      <p>
+        Nuestro equipo responderá a tu mensaje en un plazo máximo de 24 horas. ¡Esperamos poder 
+        ayudarte a descubrir la magia de Nariño!
+      </p>
+    </section>
+
+    <section id="formulario" class="seccion">
+      <h2 class="titulo-seccion">Envíanos un Mensaje</h2>
+      
+      <div id="mensaje-exito" class="mensaje-exito">
+        <i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+        <h3>¡Mensaje enviado con éxito!</h3>
+        <p>Hemos recibido tu mensaje y te contactaremos en un plazo máximo de 24 horas.</p>
+      </div>
+      
+      <form class="formulario-contacto" id="form-contacto">
+        <div class="form-group">
+          <label for="nombre">Nombre completo:</label>
+          <input type="text" id="nombre" placeholder="Tu nombre completo" required>
+          <i class="fas fa-user input-icon"></i>
+          <div class="mensaje-error" id="error-nombre">Por favor, ingresa tu nombre completo</div>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" placeholder="tu@correo.com" required>
+          <i class="fas fa-envelope input-icon"></i>
+          <div class="mensaje-error" id="error-email">Por favor, ingresa un correo electrónico válido</div>
+        </div>
+        
+        <div class="form-group">
+          <label for="telefono">Teléfono (opcional):</label>
+          <input type="tel" id="telefono" placeholder="Tu número de teléfono">
+          <i class="fas fa-phone input-icon"></i>
+        </div>
+        
+        <div class="form-group">
+          <label for="servicio">Servicio de interés:</label>
+          <select id="servicio">
+            <option value="">Selecciona un servicio</option>
+            <option value="ecoturismo">Ecoturismo</option>
+            <option value="cultura-tradicion">Cultura y Tradición</option>
+            <option value="ebike">Tour Ebike</option>
+            <option value="turismo-extranjero">Turismo Extranjero</option>
+            <option value="general">Consulta general</option>
+          </select>
+          <i class="fas fa-chevron-down input-icon"></i>
+        </div>
+        
+        <div class="form-group">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          <i class="fas fa-comment input-icon"></i>
+          <div class="mensaje-error" id="error-mensaje">Por favor, escribe tu mensaje</div>
+        </div>
+        
+        <button type="submit" class="btn-enviar" id="btn-enviar">
+          <span id="btn-texto">Enviar Mensaje</span>
+          <span id="btn-cargando" style="display: none;">
+            <i class="fas fa-spinner fa-spin"></i> Enviando...
+          </span>
+        </button>
+      </form>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo-seccion">Otras Formas de Contacto</h2>
+      <div class="info-contacto">
+        <div class="tarjeta-contacto">
+          <div class="icono-contacto">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h3>Teléfono</h3>
+          <p>+57 123 456 7890</p>
+          <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+        </div>
+        
+        <div class="tarjeta-contacto">
+          <div class="icono-contacto">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3>Correo Electrónico</h3>
+          <p>info@codeturist.com</p>
+          <p>Reservas: reservas@codeturist.com</p>
+        </div>
+        
+        <div class="tarjeta-contacto">
+          <div class="icono-contacto">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Oficina Principal</h3>
+          <p>Calle 18 # 25-30, Centro</p>
+          <p>Pasto, Nariño, Colombia</p>
+        </div>
+        
+        <div class="tarjeta-contacto">
+          <div class="icono-contacto">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>Horarios de Atención</h3>
+          <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+          <p>Sábados: 9:00 AM - 2:00 PM</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-contenido">
+      <div class="footer-info">
+        <h3>CODETURIST</h3>
+        <p>Promoviendo el turismo sostenible en Nariño, Colombia</p>
+        <div class="redes-sociales">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-enlaces">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="ecoturismo.html">Ecoturismo</a></li>
+          <li><a href="cultura-tradicion.html">Cultura y Tradición</a></li>
+          <li><a href="ebike.html">Tour Ebike</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-contacto">
+        <h4>Contacto</h4>
+        <p><i class="fas fa-envelope"></i> info@codeturist.com</p>
+        <p><i class="fas fa-phone"></i> +57 123 456 7890</p>
+        <p><i class="fas fa-map-marker-alt"></i> Pasto, Nariño, Colombia</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>© 2025 CODETURIST | Turismo sostenible en Nariño - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    // Validación y envío del formulario
+    document.addEventListener('DOMContentLoaded', function() {
+      const formulario = document.getElementById('form-contacto');
+      const btnEnviar = document.getElementById('btn-enviar');
+      const btnTexto = document.getElementById('btn-texto');
+      const btnCargando = document.getElementById('btn-cargando');
+      const mensajeExito = document.getElementById('mensaje-exito');
+      
+      // Elementos del formulario
+      const nombre = document.getElementById('nombre');
+      const email = document.getElementById('email');
+      const mensaje = document.getElementById('mensaje');
+      
+      // Mensajes de error
+      const errorNombre = document.getElementById('error-nombre');
+      const errorEmail = document.getElementById('error-email');
+      const errorMensaje = document.getElementById('error-mensaje');
+      
+      // Validación en tiempo real
+      nombre.addEventListener('input', function() {
+        validarCampo(nombre, errorNombre, nombre.value.trim() !== '');
+      });
+      
+      email.addEventListener('input', function() {
+        const esValido = validarEmail(email.value);
+        validarCampo(email, errorEmail, esValido);
+      });
+      
+      mensaje.addEventListener('input', function() {
+        validarCampo(mensaje, errorMensaje, mensaje.value.trim() !== '');
+      });
+      
+      // Envío del formulario
+      formulario.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validar todos los campos
+        const nombreValido = nombre.value.trim() !== '';
+        const emailValido = validarEmail(email.value);
+        const mensajeValido = mensaje.value.trim() !== '';
+        
+        validarCampo(nombre, errorNombre, nombreValido);
+        validarCampo(email, errorEmail, emailValido);
+        validarCampo(mensaje, errorMensaje, mensajeValido);
+        
+        // Si todos los campos son válidos, enviar formulario
+        if (nombreValido && emailValido && mensajeValido) {
+          // Simular envío (en un caso real, aquí se enviaría al servidor)
+          btnTexto.style.display = 'none';
+          btnCargando.style.display = 'inline';
+          btnEnviar.disabled = true;
+          
+          setTimeout(function() {
+            // Mostrar mensaje de éxito
+            mensajeExito.style.display = 'block';
+            formulario.reset();
+            
+            // Restaurar botón
+            btnTexto.style.display = 'inline';
+            btnCargando.style.display = 'none';
+            btnEnviar.disabled = false;
+            
+            // Desplazarse al mensaje de éxito
+            mensajeExito.scrollIntoView({ behavior: 'smooth' });
+            
+            // Ocultar mensaje después de 5 segundos
+            setTimeout(function() {
+              mensajeExito.style.display = 'none';
+            }, 5000);
+          }, 2000);
+        }
+      });
+      
+      // Función para validar email
+      function validarEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+      
+      // Función para validar campo y mostrar/ocultar error
+      function validarCampo(campo, errorElemento, esValido) {
+        if (esValido) {
+          campo.classList.remove('campo-error');
+          campo.classList.add('campo-valido');
+          errorElemento.style.display = 'none';
+        } else {
+          campo.classList.remove('campo-valido');
+          campo.classList.add('campo-error');
+          errorElemento.style.display = 'block';
+        }
+      }
+      
+      // Animación de aparición de secciones al hacer scroll
+      const secciones = document.querySelectorAll('.seccion');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, 200);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      secciones.forEach(seccion => {
+        if (!seccion.classList.contains('visible')) {
+          observer.observe(seccion);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

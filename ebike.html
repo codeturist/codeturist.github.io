@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tour Ebike Nariño - Recorrido de 7 horas por los pueblos de Nariño disfrutando de gastronomía, cultura y paisajes">
+  <title>Tour Ebike | CODETURIST Nariño</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Fuente y colores base mejorados - COLORES ORIGINALES */
+    :root {
+      --verde-prado: #27ae60;
+      --azul-celeste: #3498db;
+      --gris-claro: #f8f9fa;
+      --texto-oscuro: #2c3e50;
+      --sombra: 0 8px 30px rgba(0, 0, 0, 0.12);
+      --sombra-intensa: 0 15px 40px rgba(0, 0, 0, 0.2);
+      --dorado: #f1c40f;
+      --naranja: #e67e22;
+      --degradado-principal: linear-gradient(135deg, var(--verde-prado), var(--azul-celeste));
+      --degradado-secundario: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--gris-claro);
+      color: var(--texto-oscuro);
+      line-height: 1.7;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(46, 204, 113, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(93, 173, 226, 0.05) 0%, transparent 20%);
+    }
+
+    /* Encabezado mejorado con movimiento más lento */
+    header {
+      background: var(--degradado-principal);
+      color: white;
+      text-align: center;
+      padding: 1.8rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: fadeInDown 1.5s ease, breathing 6s ease-in-out infinite;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Efecto de respiración más lento y suave */
+    @keyframes breathing {
+      0%, 100% {
+        opacity: 1;
+        border-radius: 0% 0% 0% 0%;
+        transform: scale(1);
+      }
+      25% {
+        opacity: 0.97;
+        border-radius: 5% 8% 10% 6%;
+        transform: scale(1.002);
+      }
+      50% {
+        opacity: 0.99;
+        border-radius: 8% 5% 6% 10%;
+        transform: scale(1.005);
+      }
+      75% {
+        opacity: 0.97;
+        border-radius: 6% 10% 8% 5%;
+        transform: scale(1.002);
+      }
+    }
+
+    header .logo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin: 0;
+      letter-spacing: 1.5px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      font-weight: 700;
+      animation: textGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes textGlow {
+      0%, 100% {
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        transform: scale(1);
+      }
+      50% {
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.3), 0 0 15px rgba(255,255,255,0.2);
+        transform: scale(1.01);
+      }
+    }
+
+    header .logo p {
+      margin: 0.5rem 0 0 0;
+      font-size: 1.2rem;
+      font-weight: 400;
+      opacity: 0.9;
+      animation: slideIn 1.8s ease-out;
+    }
+
+    /* Navegación mejorada con transiciones más lentas */
+    nav ul {
+      list-style: none;
+      margin: 1.8rem 0 0 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: rgba(255, 255, 255, 0.1);
+      font-weight: 500;
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1.2s ease-out;
+      animation-fill-mode: both;
+    }
+
+    nav ul li:nth-child(1) a { animation-delay: 0.2s; }
+    nav ul li:nth-child(2) a { animation-delay: 0.4s; }
+    nav ul li:nth-child(3) a { animation-delay: 0.6s; }
+    nav ul li:nth-child(4) a { animation-delay: 0.8s; }
+    nav ul li:nth-child(5) a { animation-delay: 1.0s; }
+    nav ul li:nth-child(6) a { animation-delay: 1.2s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    nav ul li a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.6s;
+    }
+
+    nav ul li a:hover::before,
+    nav ul li a.activo::before {
+      left: 100%;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.activo {
+      background: white;
+      color: var(--verde-prado);
+      font-weight: 600;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hero principal mejorado con animaciones más lentas */
+    .hero {
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+        url("imagen/lllll.jpg") center/cover;
+      color: white;
+      text-align: center;
+      padding: 10rem 1.5rem;
+      position: relative;
+      animation: fadeIn 2s ease;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--degradado-principal);
+      opacity: 0.3;
+      z-index: 1;
+      animation: gentlePulse 8s ease-in-out infinite;
+    }
+
+    @keyframes gentlePulse {
+      0%, 100% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 0.4;
+      }
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      animation: slideInUp 1.5s ease;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero-text p {
+      font-size: 1.6rem;
+      margin-bottom: 2.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: slideInUp 2s ease;
+      font-weight: 400;
+      opacity: 0.95;
+    }
+
+    .btn {
+      background: var(--degradado-principal);
+      color: white;
+      text-decoration: none;
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: inline-block;
+      font-size: 1.3rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      animation: gentlePulseBtn 4s infinite;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes gentlePulseBtn {
+      0% { transform: scale(1); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); }
+      50% { transform: scale(1.03); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25); }
+      100% { transform: scale(1); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); }
+    }
+
+    .btn:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      animation: none;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: 0.8s;
+    }
+
+    .btn:hover::after {
+      left: 100%;
+    }
+
+    /* Secciones de contenido mejoradas con transiciones más lentas */
+    main {
+      max-width: 1300px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .seccion {
+      background: white;
+      border-radius: 20px;
+      box-shadow: var(--sombra);
+      padding: 4rem;
+      margin-bottom: 4rem;
+      transition: all 0.6s ease;
+      opacity: 0;
+      transform: translateY(40px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .seccion::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--degradado-principal);
+      transition: width 0.6s ease;
+    }
+
+    .seccion:hover::before {
+      width: 8px;
+    }
+
+    .seccion.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+
+    .seccion:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--sombra-intensa);
+    }
+
+    .titulo-seccion {
+      color: var(--texto-oscuro);
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 3rem;
+      position: relative;
+      font-weight: 700;
+    }
+
+    .titulo-seccion::after {
+      content: '';
+      display: block;
+      width: 120px;
+      height: 6px;
+      background: var(--degradado-principal);
+      margin: 1.5rem auto;
+      border-radius: 3px;
+      animation: expandWidth 1.5s ease;
+    }
+
+    /* Sección de itinerario con transiciones más suaves */
+    .itinerario-contenido {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .itinerario-texto ul {
+      background: linear-gradient(135deg, #e8f8f5, #d1f2eb);
+      padding: 2.5rem;
+      border-radius: 15px;
+      list-style: none;
+      box-shadow: var(--sombra);
+      border-left: 5px solid var(--verde-prado);
+      transition: all 0.6s ease;
+    }
+
+    .itinerario-texto ul:hover {
+      transform: translateX(5px);
+    }
+
+    .itinerario-texto li {
+      margin: 1.2rem 0;
+      line-height: 1.7;
+      padding-left: 2.5rem;
+      position: relative;
+      transition: transform 0.5s;
+      font-weight: 500;
+    }
+
+    .itinerario-texto li:hover {
+      transform: translateX(8px);
+    }
+
+    .itinerario-texto li::before {
+      content: '⏱';
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+
+    .itinerario-imagen {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: var(--sombra-intensa);
+      transition: all 0.8s ease;
+    }
+
+    .itinerario-imagen::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      background: linear-gradient(transparent, rgba(0,0,0,0.3));
+      border-radius: 0 0 20px 20px;
+    }
+
+    .itinerario-imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 1.2s ease;
+    }
+
+    .itinerario-imagen:hover {
+      transform: scale(1.02);
+    }
+
+    .itinerario-imagen:hover img {
+      transform: scale(1.08);
+    }
+
+    /* Grid de puntos por visitar con transiciones más elegantes */
+    .grid-pueblos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 3rem;
+      margin-top: 2.5rem;
+    }
+
+    .tarjeta-pueblo {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .tarjeta-pueblo::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--degradado-principal);
+      opacity: 0;
+      transition: opacity 0.6s;
+      z-index: 1;
+    }
+
+    .tarjeta-pueblo:hover::before {
+      opacity: 0.1;
+    }
+
+    .tarjeta-pueblo:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .tarjeta-img {
+      height: 280px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .tarjeta-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1s ease;
+    }
+
+    .tarjeta-pueblo:hover .tarjeta-img img {
+      transform: scale(1.15);
+    }
+
+    .tarjeta-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    }
+
+    .tarjeta-contenido {
+      padding: 2.2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tarjeta-contenido h3 {
+      color: var(--verde-prado);
+      margin-top: 0;
+      font-size: 1.7rem;
+      transition: color 0.5s;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    .tarjeta-pueblo:hover .tarjeta-contenido h3 {
+      color: var(--azul-celeste);
+    }
+
+    .tarjeta-contenido p {
+      color: var(--texto-oscuro);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* Sección de alquiler mejorada */
+    .grid-alquiler {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .tarjeta-alquiler {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: var(--sombra);
+      transition: transform 0.6s, box-shadow 0.6s;
+      position: relative;
+      overflow: hidden;
+      border-top: 5px solid var(--verde-prado);
+    }
+
+    .tarjeta-alquiler::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--degradado-principal);
+    }
+
+    .tarjeta-alquiler:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      border-top: 5px solid var(--azul-celeste);
+    }
+
+    .icono-alquiler {
+      font-size: 3.5rem;
+      color: var(--verde-prado);
+      margin-bottom: 1.5rem;
+      transition: transform 0.6s ease;
+    }
+
+    .tarjeta-alquiler:hover .icono-alquiler {
+      transform: scale(1.1);
+    }
+
+    .tarjeta-alquiler h3 {
+      color: var(--azul-celeste);
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .precio {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--verde-prado);
+      margin: 1.5rem 0;
+      font-family: 'Playfair Display', serif;
+      transition: color 0.5s ease;
+    }
+
+    .tarjeta-alquiler:hover .precio {
+      color: var(--azul-celeste);
+    }
+
+    .btn-alquiler {
+      background: var(--degradado-principal);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      font-size: 1.1rem;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-alquiler:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-alquiler::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: 0.7s;
+    }
+
+    .btn-alquiler:hover::after {
+      left: 100%;
+    }
+
+    /* Sección de aliados */
+    .grid-aliados {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .tarjeta-aliado {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: var(--sombra);
+      transition: transform 0.6s, box-shadow 0.6s;
+      position: relative;
+      overflow: hidden;
+      border-top: 5px solid var(--azul-celeste);
+    }
+
+    .tarjeta-aliado:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .icono-aliado {
+      font-size: 3rem;
+      color: var(--azul-celeste);
+      margin-bottom: 1.5rem;
+    }
+
+    .tarjeta-aliado h3 {
+      color: var(--verde-prado);
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+
+    .tarjeta-aliado ul {
+      list-style: none;
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+
+    .tarjeta-aliado li {
+      margin: 0.8rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .tarjeta-aliado li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--verde-prado);
+      font-weight: bold;
+    }
+
+    /* Imagen de recorrido */
+    .imagen-recorrido {
+      margin-top: 3rem;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--sombra-intensa);
+      transition: all 0.6s ease;
+    }
+
+    .imagen-recorrido:hover {
+      transform: translateY(-5px);
+    }
+
+    .imagen-recorrido img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 1s ease;
+    }
+
+    .imagen-recorrido:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Animaciones mejoradas y más lentas */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes expandWidth {
+      from { width: 0; }
+      to { width: 120px; }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Pie de página mejorado */
+    footer {
+      background: var(--degradado-principal);
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+      margin-top: 5rem;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+      background-size: cover;
+    }
+
+    .footer-contenido {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      text-align: left;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-info h3 {
+      color: white;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .footer-info p {
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    .redes-sociales {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .redes-sociales a {
+      color: white;
+      background: rgba(255, 255, 255, 0.15);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.6s ease;
+      font-size: 1.3rem;
+      backdrop-filter: blur(5px);
+    }
+
+    .redes-sociales a:hover {
+      background: white;
+      color: var(--verde-prado);
+      transform: translateY(-5px) scale(1.08);
+    }
+
+    .footer-enlaces h4,
+    .footer-contacto h4 {
+      color: white;
+      margin-bottom: 1.8rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .footer-enlaces ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-enlaces li {
+      margin-bottom: 1rem;
+    }
+
+    .footer-enlaces a {
+      color: rgba(255, 255, 255, 0.85);
+      transition: all 0.5s ease;
+      position: relative;
+      padding-left: 1.5rem;
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    .footer-enlaces a::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      transition: transform 0.5s;
+      font-weight: bold;
+    }
+
+    .footer-enlaces a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .footer-enlaces a:hover::before {
+      transform: translateX(5px);
+    }
+
+    .footer-contacto p {
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+    }
+
+    .footer-contacto i {
+      margin-right: 1.2rem;
+      width: 20px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .footer-copy {
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      padding-top: 2.5rem;
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 1rem;
+      opacity: 0.8;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Adaptabilidad mejorada */
+    @media (max-width: 1024px) {
+      .hero-text h2 {
+        font-size: 3.2rem;
+      }
+      
+      .hero-text p {
+        font-size: 1.4rem;
+      }
+      
+      .seccion {
+        padding: 3rem;
+      }
+      
+      .itinerario-contenido {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 7rem 1rem;
+      }
+
+      .hero-text h2 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-text p {
+        font-size: 1.2rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav ul li a {
+        display: block;
+        width: 220px;
+        margin: 0 auto;
+      }
+
+      .footer-contenido {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+      }
+
+      .redes-sociales {
+        justify-content: center;
+      }
+      
+      .footer-enlaces ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .footer-contacto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header .logo h1 {
+        font-size: 2.2rem;
+      }
+      
+      .titulo-seccion {
+        font-size: 2.2rem;
+      }
+      
+      .seccion {
+        padding: 2rem;
+      }
+      
+      .grid-pueblos {
+        grid-template-columns: 1fr;
+      }
+      
+      .grid-alquiler {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>CODETURIST</h1>
+      <p>Turismo responsable y sostenible en el corazón de Nariño</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="ecoturismo.html">Ecoturismo</a></li>
+        <li><a href="cultura-tradicion.html">Cultura y Tradición</a></li>
+        <li><a href="ebike.html" class="activo">Ebike</a></li>
+        <li><a href="turismo-extranjero.html">Turismo Extranjero</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Tour Ebike por los Pueblos de Nariño</h2>
+      <p>Descubre la magia de los pueblos nariñenses en un recorrido de 7 horas con nuestras ebikes</p>
+      <a href="#alquiler" class="btn">Reservar Tour</a>
+    </div>
+  </section>
+
+  <main>
+    <section class="seccion intro visible">
+      <h2 class="titulo-seccion">Tour de 7 Horas por los Pueblos Nariñenses</h2>
+      <p>
+        Embárcate en una aventura única recorriendo los pintorescos pueblos de Nariño en nuestras ebikes de última generación. 
+        Este tour de 7 horas te llevará por paisajes espectaculares, cascadas impresionantes y pueblos llenos de tradición y cultura.
+      </p>
+      <p>
+        Disfruta de la gastronomía local, conoce artesanos tradicionales y descubre los secretos mejor guardados de esta hermosa región andina.
+      </p>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo-seccion">Itinerario del Tour</h2>
+      <div class="itinerario-contenido">
+        <div class="itinerario-texto">
+          <p>Nuestro tour cuidadosamente planificado te llevará por los lugares más emblemáticos de la región:</p>
+          <ul>
+            <li><strong>7:00 AM:</strong> Salida desde Pasto con nuestras ebikes</li>
+            <li><strong>8:00 AM:</strong> Llegada a Genoy - Visita a la iglesia</li>
+            <li><strong>9:30 AM:</strong> La Florida - Degustación de lácteos locales</li>
+            <li><strong>11:00 AM:</strong> El Encanto - Visita al pueblo</li>
+            <li><strong>12:30 PM:</strong> Sandona - Iglesia y almuerzo típico</li>
+            <li><strong>2:00 PM:</strong> Consacá - Opción de camping u hotel</li>
+            <li><strong>3:30 PM:</strong> Chapacual - Zona de comida con piscinas</li>
+            <li><strong>4:30 PM:</strong> Yacuanquer - Parapente y visita a iglesias</li>
+            <li><strong>5:30 PM:</strong> Coba Negra - Parque recreativo</li>
+            <li><strong>6:30 PM:</strong> Mister Pollo - Punto de llegada en Pasto</li>
+          </ul>
+          <p>Cada parada incluye experiencias culturales, gastronómicas y naturales únicas que te permitirán conectar con la esencia de Nariño.</p>
+        </div>
+        <div class="itinerario-imagen">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Paisaje de Nariño">
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo-seccion">Mapa del Recorrido</h2>
+      <p>Sigue nuestra ruta de 7 horas a través de los pintorescos pueblos de Nariño:</p>
+      
+      <div class="imagen-recorrido">
+        <img src="imagen/mapadsa.jpg" alt="Mapa del recorrido por Nariño">
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo-seccion">Puntos por Visitar</h2>
+      <div class="grid-pueblos">
+        <div class="tarjeta-pueblo">
+          <div class="tarjeta-img">
+            <img src="https://images.unsplash.com/photo-1597074861083-6d9a4e895014?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="El Encanto">
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>El Encanto</h3>
+            <p>Pueblo pintoresco con arquitectura tradicional y paisajes naturales impresionantes. Ideal para fotografía y conexión con la naturaleza.</p>
+          </div>
+        </div>
+        
+        <div class="tarjeta-pueblo">
+          <div class="tarjeta-img">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Parapente">
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Parapente en Yacuanquer</h3>
+            <p>Experimenta la emoción del vuelo en parapente con vistas panorámicas de los valles y montañas de Nariño.</p>
+          </div>
+        </div>
+        
+        <div class="tarjeta-pueblo">
+          <div class="tarjeta-img">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Parque Recreativo">
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Parque Recreativo La Coba</h3>
+            <p>Área natural perfecta para descansar, disfrutar de actividades al aire libre y conectar con la naturaleza.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="alquiler" class="seccion">
+      <h2 class="titulo-seccion">Paquetes de Tour</h2>
+      <p>Ofrecemos diferentes opciones para que disfrutes al máximo tu experiencia por los pueblos de Nariño:</p>
+      
+      <div class="grid-alquiler">
+        <div class="tarjeta-alquiler">
+          <div class="icono-alquiler">
+            <i class="fas fa-bicycle"></i>
+          </div>
+          <h3>Tour Básico</h3>
+          <p>Ebike estándar + guía local + seguro básico. Ideal para quienes buscan una experiencia esencial.</p>
+          <div class="precio">$19.99/persona</div>
+          <button class="btn-alquiler">Reservar Tour</button>
+        </div>
+        
+        <div class="tarjeta-alquiler">
+          <div class="icono-alquiler">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <h3>Tour Completo</h3>
+          <p>Ebike premium + guía + todas las comidas + seguro completo. La experiencia más completa.</p>
+          <div class="precio">$24.99/persona</div>
+          <button class="btn-alquiler">Reservar Tour</button>
+        </div>
+        
+        <div class="tarjeta-alquiler">
+          <div class="icono-alquiler">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Tour Grupal</h3>
+          <p>Para grupos de 4+ personas. Incluye ebikes, guía, comidas y fotógrafo profesional.</p>
+          <div class="precio">$29.99/grupo</div>
+          <button class="btn-alquiler">Reservar Tour</button>
+        </div>
+        
+        <div class="tarjeta-alquiler">
+          <div class="icono-alquiler">
+            <i class="fas fa-car"></i>
+          </div>
+          <h3>Tour Premium</h3>
+          <p>Carro eléctrico + guía especializado + comidas gourmet + álbum fotográfico.</p>
+          <div class="precio">$39.99/persona</div>
+          <button class="btn-alquiler">Reservar Tour</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo-seccion">Nuestros Aliados</h2>
+      <div class="grid-aliados">
+        <div class="tarjeta-aliado">
+          <div class="icono-aliado">
+            <i class="fas fa-university"></i>
+          </div>
+          <h3>Urkubica - Universidad Mariana</h3>
+          <p>Aliado académico que aporta investigación y conocimiento para el desarrollo turístico sostenible.</p>
+          <ul>
+            <li>Investigación en turismo sostenible</li>
+            <li>Capacitación de guías locales</li>
+            <li>Desarrollo de rutas culturales</li>
+          </ul>
+        </div>
+        
+        <div class="tarjeta-aliado">
+          <div class="icono-aliado">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <h3>Vida Saludable</h3>
+          <p>Promoviendo el bienestar integral a través del turismo activo y responsable.</p>
+          <ul>
+            <li>Educación ambiental</li>
+            <li>Turismo saludable</li>
+            <li>Actividades al aire libre</li>
+          </ul>
+        </div>
+        
+        <div class="tarjeta-aliado">
+          <div class="icono-aliado">
+            <i class="fas fa-sun"></i>
+          </div>
+          <h3>Evolti</h3>
+          <p>Energía solar y movilidad sostenible para un turismo responsable.</p>
+          <ul>
+            <li>Energía solar para nuestras operaciones</li>
+            <li>Modalidad de carro para turistas</li>
+            <li>Movilidad eléctrica sostenible</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-contenido">
+      <div class="footer-info">
+        <h3>CODETURIST</h3>
+        <p>Promoviendo el turismo sostenible en Nariño, Colombia</p>
+        <div class="redes-sociales">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-enlaces">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="ecoturismo.html">Ecoturismo</a></li>
+          <li><a href="cultura-tradicion.html">Cultura y Tradición</a></li>
+          <li><a href="ebike.html">Tour Ebike</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-contacto">
+        <h4>Contacto</h4>
+        <p><i class="fas fa-envelope"></i> ebike@codeturist.com</p>
+        <p><i class="fas fa-phone"></i> +57 123 456 7890</p>
+        <p><i class="fas fa-map-marker-alt"></i> Pasto, Nariño, Colombia</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>© 2025 CODETURIST | Turismo sostenible en Nariño - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- Script para animaciones -->
+  <script>
+    // Animación de aparición de secciones al hacer scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const secciones = document.querySelectorAll('.seccion');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, 200);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      secciones.forEach(seccion => {
+        if (!seccion.classList.contains('visible')) {
+          observer.observe(seccion);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

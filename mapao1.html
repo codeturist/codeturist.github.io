@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mapa Ruta Circunvalar - Pasto (CODETURIST)</title>
+  <style>
+    /* estilos: mapa a pantalla completa */
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    #map {
+      height: 80vh;               /* tamaño del mapa */
+      width: 100%;
+      border-bottom: 4px solid #2ecc71;
+    }
+    .controls {
+      max-width: 1100px;
+      margin: 12px auto;
+      padding: 12px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .controls .info {
+      color: #333;
+    }
+    .btn {
+      background: linear-gradient(90deg,#2ecc71,#5dade2);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .legend {
+      background: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      font-size: 14px;
+    }
+    @media (max-width:700px){
+      .controls { flex-direction: column; gap:8px; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <div class="info">
+      <strong>CODETURIST — Ruta Circunvalar (Pasto)</strong><br>
+      Haz clic en los marcadores para ver la información de cada punto.
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <div class="legend">Marcadores: Inicio ▶ Ruta ▶ Punto intermedio</div>
+      <button class="btn" id="fitBtn">Ajustar vista</button>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <script>
+    // Coordenadas de referencia alrededor de Pasto (aproximadas)
+    // He escogido 8 puntos alrededor de la ciudad formando una circunvalación aproximada.
+    // Si tienes coordenadas reales, reemplázalas en el arreglo `routePoints`.
+    const routePoints = [
+      { lat: 1.2360, lng: -77.2810, title: 'Punto A - Norte' },
+      { lat: 1.2300, lng: -77.2950, title: 'Punto B - Noroeste' },
+      { lat: 1.2140, lng: -77.3010, title: 'Punto C - Oeste' },
+      { lat: 1.2030, lng: -77.2910, title: 'Punto D - Suroeste' },
+      { lat: 1.1920, lng: -77.2780, title: 'Punto E - Sur' },
+      { lat: 1.1960, lng: -77.2640, title: 'Punto F - Sureste' },
+      { lat: 1.2100, lng: -77.2570, title: 'Punto G - Este' },
+      { lat: 1.2280, lng: -77.2660, title: 'Punto H - Noreste' }
+    ];
+
+    let map;
+    let markers = [];
+    let routeLine;
+
+    function initMap() {
+      // Centro en Pasto (coordenadas aproximadas)
+      const pastoCenter = { lat: 1.2139, lng: -77.2811 };
+
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: pastoCenter,
+        zoom: 13,
+        mapTypeId: 'roadmap',
+        gestureHandling: 'greedy',
+        streetViewControl: false,
+        fullscreenControl: true,
+        zoomControl: true
+      });
+
+      // Crear marcadores y ventanas de información
+      const infoWindow = new google.maps.InfoWindow();
+
+      routePoints.forEach((pt, idx) => {
+        const marker = new google.maps.Marker({
+          position: { lat: pt.lat, lng: pt.lng },
+          map,
+          title: pt.title,
+          label: { text: String(idx+1), color: 'white' },
+          // icon opcional: puedes usar un color distinto para el primer punto
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 10,
+            fillColor: idx === 0 ? '#2ecc71' : '#5dade2',
+            fillOpacity: 1,
+            strokeWeight: 1,
+            strokeColor: '#ffffff'
+          }
+        });
+
+        marker.addListener('click', () => {
+          infoWindow.setContent(
+            `<div style="min-width:180px"><strong>${pt.title}</strong><br>` +
+            `Lat: ${pt.lat.toFixed(6)}, Lng: ${pt.lng.toFixed(6)}<br>` +
+            `<small>Punto ${idx+1} de la ruta circunvalar</small></div>`
+          );
+          infoWindow.open(map, marker);
+        });
+
+        markers.push(marker);
+      });
+
+      // Crear polyline para la ruta (cierra el polígono volviendo al primer punto)
+      const pathCoords = routePoints.map(p => ({ lat: p.lat, lng: p.lng }));
+      pathCoords.push({ lat: routePoints[0].lat, lng: routePoints[0].lng }); // cerrar la ruta
+
+      routeLine = new google.maps.Polyline({
+        path: pathCoords,
+        geodesic: true,
+        strokeColor: '#2ecc71',
+        strokeOpacity: 0.9,
+        strokeWeight: 4,
+        map: map
+      });
+
+      // Ajustar vista para que muestre toda la ruta
+      fitMapToMarkers();
+
+      // Botón para readjustar vista
+      document.getElementById('fitBtn').addEventListener('click', fitMapToMarkers);
+    }
+
+    function fitMapToMarkers() {
+      const bounds = new google.maps.LatLngBounds();
+      routePoints.forEach(p => bounds.extend(new google.maps.LatLng(p.lat, p.lng)));
+      map.fitBounds(bounds, 80); // padding
+    }
+  </script>
+
+  <!--
+    RECUERDA: reemplaza YOUR_API_KEY_HERE por tu propia API key de Google Maps
+    Habilita "Maps JavaScript API" en la consola de Google Cloud.
+    -->
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=initMap">
+  </script>
+</body>
+</html>

@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CODETURIST - Ecoturismo sostenible en Nariño, Colombia. Descubre la biodiversidad única de esta región andina con actividades responsables.">
+  <title>Ecoturismo | CODETURIST Nariño</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Fuente y colores base */
+    :root {
+      --verde-prado: #2ecc71;
+      --azul-celeste: #5dade2;
+      --gris-claro: #f4f9f8;
+      --texto-oscuro: #2f2f2f;
+      --sombra: 0 3px 10px rgba(0, 0, 0, 0.1);
+      --sombra-intensa: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ENCABEZADO MEJORADO CON ANIMACIONES DEL PRIMER CÓDIGO */
+    header {
+      background: linear-gradient(135deg, var(--verde-prado), var(--azul-celeste));
+      color: white;
+      text-align: center;
+      padding: 1.8rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: fadeInDown 1.5s ease, breathing 6s ease-in-out infinite;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Efecto de respiración más lento y suave */
+    @keyframes breathing {
+      0%, 100% {
+        opacity: 1;
+        border-radius: 0% 0% 0% 0%;
+        transform: scale(1);
+      }
+      25% {
+        opacity: 0.97;
+        border-radius: 5% 8% 10% 6%;
+        transform: scale(1.002);
+      }
+      50% {
+        opacity: 0.99;
+        border-radius: 8% 5% 6% 10%;
+        transform: scale(1.005);
+      }
+      75% {
+        opacity: 0.97;
+        border-radius: 6% 10% 8% 5%;
+        transform: scale(1.002);
+      }
+    }
+
+    header .logo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin: 0;
+      letter-spacing: 1.5px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      font-weight: 700;
+      animation: textGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes textGlow {
+      0%, 100% {
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        transform: scale(1);
+      }
+      50% {
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.3), 0 0 15px rgba(255,255,255,0.2);
+        transform: scale(1.01);
+      }
+    }
+
+    header .logo p {
+      margin: 0.5rem 0 0 0;
+      font-size: 1.2rem;
+      font-weight: 400;
+      opacity: 0.9;
+      animation: slideIn 1.8s ease-out;
+    }
+
+    /* Navegación mejorada con transiciones más lentas */
+    nav ul {
+      list-style: none;
+      margin: 1.8rem 0 0 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: rgba(255, 255, 255, 0.1);
+      font-weight: 500;
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1.2s ease-out;
+      animation-fill-mode: both;
+    }
+
+    nav ul li:nth-child(1) a { animation-delay: 0.2s; }
+    nav ul li:nth-child(2) a { animation-delay: 0.4s; }
+    nav ul li:nth-child(3) a { animation-delay: 0.6s; }
+    nav ul li:nth-child(4) a { animation-delay: 0.8s; }
+    nav ul li:nth-child(5) a { animation-delay: 1.0s; }
+    nav ul li:nth-child(6) a { animation-delay: 1.2s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    nav ul li a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.6s;
+    }
+
+    nav ul li a:hover::before,
+    nav ul li a.activo::before {
+      left: 100%;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.activo {
+      background: white;
+      color: var(--verde-prado);
+      font-weight: 600;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Animaciones mejoradas y más lentas */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Resto del código CSS original */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: var(--gris-claro);
+      color: var(--texto-oscuro);
+      line-height: 1.6;
+    }
+
+    /* Hero principal */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("imagen/frailejo.jpg") center/cover;
+      color: white;
+      text-align: center;
+      padding: 6rem 1.5rem;
+      position: relative;
+    }
+
+    .hero-text h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-text p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      background-color: var(--verde-prado);
+      color: white;
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-block;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:hover {
+      background-color: var(--azul-celeste);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Secciones de contenido */
+    main {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .seccion {
+      background: white;
+      border-radius: 12px;
+      box-shadow: var(--sombra);
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .seccion:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--sombra-intensa);
+    }
+
+    .titulo-seccion {
+      color: var(--verde-prado);
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .titulo-seccion::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--azul-celeste);
+      margin: 0.8rem auto;
+      border-radius: 2px;
+    }
+
+    /* Grid de destinos ecológicos */
+    .grid-destinos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .tarjeta-destino {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .tarjeta-destino:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--sombra-intensa);
+    }
+
+    .tarjeta-img {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .tarjeta-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .tarjeta-destino:hover .tarjeta-img img {
+      transform: scale(1.1);
+    }
+
+    .etiqueta-eco {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--verde-prado);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .tarjeta-contenido {
+      padding: 1.5rem;
+    }
+
+    .tarjeta-contenido h3 {
+      color: var(--verde-prado);
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    .tarjeta-contenido p {
+      color: var(--texto-oscuro);
+      margin-bottom: 1.5rem;
+    }
+
+    .info-eco {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .info-item i {
+      margin-right: 0.5rem;
+      color: var(--azul-celeste);
+    }
+
+    .btn-secundario {
+      background-color: transparent;
+      color: var(--azul-celeste);
+      border: 2px solid var(--azul-celeste);
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .btn-secundario:hover {
+      background-color: var(--azul-celeste);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Sección de actividades */
+    .grid-actividades {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .tarjeta-actividad {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--sombra);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-top: 4px solid var(--verde-prado);
+    }
+
+    .tarjeta-actividad:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--sombra-intensa);
+      border-top: 4px solid var(--azul-celeste);
+    }
+
+    .icono-actividad {
+      font-size: 3rem;
+      color: var(--verde-prado);
+      margin-bottom: 1.5rem;
+    }
+
+    .tarjeta-actividad h3 {
+      color: var(--azul-celeste);
+      margin-bottom: 1rem;
+    }
+
+    /* Sección de principios ecológicos */
+    .principios-contenido {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .principios-texto ul {
+      background: #e8f8f5;
+      padding: 1.5rem;
+      border-radius: 10px;
+      list-style: none;
+    }
+
+    .principios-texto li {
+      margin: 0.8rem 0;
+      line-height: 1.5;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .principios-texto li::before {
+      content: '🌿';
+      position: absolute;
+      left: 0;
+    }
+
+    .principios-imagen img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: var(--sombra);
+    }
+
+    /* Sección de testimonios */
+    .grid-testimonios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .tarjeta-testimonio {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: var(--sombra);
+      transition: transform 0.3s;
+      border-top: 4px solid var(--azul-celeste);
+    }
+
+    .tarjeta-testimonio:hover {
+      transform: translateY(-5px);
+    }
+
+    .testimonio-texto {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .testimonio-texto::before {
+      content: """;
+      font-size: 3rem;
+      color: var(--verde-prado);
+      position: absolute;
+      top: -1rem;
+      left: -0.5rem;
+      opacity: 0.3;
+    }
+
+    .testimonio-autor {
+      display: flex;
+      align-items: center;
+    }
+
+    .testimonio-autor img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 1rem;
+    }
+
+    .autor-info h4 {
+      margin: 0;
+      color: var(--azul-celeste);
+    }
+
+    .autor-info p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Sección de contacto */
+    .contacto-contenido {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .info-contacto {
+      background: #e8f8f5;
+      padding: 2rem;
+      border-radius: 12px;
+    }
+
+    .info-contacto h3 {
+      color: var(--verde-prado);
+      margin-bottom: 1.5rem;
+    }
+
+    .info-contacto p {
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .info-contacto i {
+      margin-right: 1rem;
+      color: var(--azul-celeste);
+      width: 20px;
+      text-align: center;
+    }
+
+    .formulario-contacto {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: var(--sombra);
+    }
+
+    .form-grupo {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-grupo label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--texto-oscuro);
+    }
+
+    .form-grupo input,
+    .form-grupo textarea,
+    .form-grupo select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: "Poppins", sans-serif;
+      transition: border 0.3s;
+    }
+
+    .form-grupo input:focus,
+    .form-grupo textarea:focus,
+    .form-grupo select:focus {
+      border-color: var(--azul-celeste);
+      outline: none;
+    }
+
+    .btn-enviar {
+      background-color: var(--verde-prado);
+      color: white;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .btn-enviar:hover {
+      background-color: var(--azul-celeste);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Pie de página */
+    footer {
+      background: linear-gradient(90deg, var(--verde-prado), var(--azul-celeste));
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin-top: 3rem;
+      font-weight: 500;
+    }
+
+    .footer-contenido {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      text-align: left;
+    }
+
+    .footer-info h3 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .footer-info p {
+      margin-bottom: 1.5rem;
+    }
+
+    .redes-sociales {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .redes-sociales a {
+      color: white;
+      background: rgba(255, 255, 255, 0.2);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .redes-sociales a:hover {
+      background: white;
+      color: var(--verde-prado);
+      transform: translateY(-3px);
+    }
+
+    .footer-enlaces h4,
+    .footer-contacto h4 {
+      color: white;
+      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-enlaces ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-enlaces li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-enlaces a {
+      color: rgba(255, 255, 255, 0.8);
+      transition: color 0.3s;
+    }
+
+    .footer-enlaces a:hover {
+      color: white;
+    }
+
+    .footer-contacto p {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-contacto i {
+      margin-right: 0.8rem;
+      width: 20px;
+      text-align: center;
+    }
+
+    .footer-copy {
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* Adaptabilidad */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 4rem 1rem;
+      }
+
+      .hero-text h2 {
+        font-size: 2rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      nav ul li a {
+        display: block;
+        width: 200px;
+        margin: 0 auto;
+      }
+
+      .principios-contenido,
+      .contacto-contenido {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-contenido {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .redes-sociales {
+        justify-content: center;
+      }
+
+      /* Responsive para el encabezado mejorado */
+      header .logo h1 {
+        font-size: 2.2rem;
+      }
+      
+      header .logo p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>CODETURIST</h1>
+      <p>Entre montañas y raíces, nace el turismo del futuro.</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="ecoturismo.html" class="activo">Ecoturismo</a></li>
+        <li><a href="cultura-tradicion.html">Cultura y Tradicion</a></li>
+        <li><a href="ebike.html">Ebike</a></li>
+        <li><a href="turismo-extranjero.html">Turismo Extranjero</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Ecoturismo en Nariño</h2>
+      <p>Descubre la biodiversidad única de esta región andina a través de experiencias sostenibles y responsables</p>
+      <a href="#destinos" class="btn">Explora Nuestros Destinos</a>
+    </div>
+  </section>
+
+  <main>
+    <section class="seccion">
+      <h2 class="titulo-seccion">Naturaleza en Estado Puro</h2>
+      <p>Nariño es un paraíso para los amantes de la naturaleza. Con ecosistemas que van desde páramos andinos hasta selvas tropicales, nuestra región alberga una biodiversidad única en el mundo. En CODETURIST nos especializamos en crear experiencias ecoturísticas que respetan el medio ambiente y benefician a las comunidades locales.</p>
+      <p>Nuestros programas están diseñados para minimizar el impacto ambiental mientras maximizan la conexión con la naturaleza y el aprendizaje sobre los ecosistemas locales.</p>
+    </section>
+
+    <section id="destinos" class="seccion">
+      <h2 class="titulo-seccion">Destinos Ecológicos</h2>
+      <div class="grid-destinos">
+        <div class="tarjeta-destino">
+          <div class="tarjeta-img">
+            <img src="imagen/coc.jpg" alt="Laguna de la Cocha">
+            <div class="etiqueta-eco">Reserva Natural</div>
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Laguna de la Cocha</h3>
+            <p>El segundo cuerpo de agua natural más grande de Colombia, rodeado de bosques nublados y una rica biodiversidad acuática.</p>
+            <div class="info-eco">
+              <div class="info-item">
+                <i class="fas fa-tree"></i> Bosque Nublado
+              </div>
+              <div class="info-item">
+                <i class="fas fa-water"></i> Humedal
+              </div>
+              <div class="info-item">
+                <i class="fas fa-hiking"></i> Senderismo
+              </div>
+            </div>
+            <a href="#" class="btn-secundario">Conocer Más</a>
+          </div>
+        </div>
+        
+        <div class="tarjeta-destino">
+          <div class="tarjeta-img">
+            <img src="imagen/volc.jpg" alt="Volcán Galeras">
+            <div class="etiqueta-eco">Área Protegida</div>
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Volcán Galeras</h3>
+            <p>Un imponente volcán activo que ofrece senderos ecológicos, avistamiento de cóndores y vistas panorámicas espectaculares.</p>
+            <div class="info-eco">
+              <div class="info-item">
+                <i class="fas fa-mountain"></i> Alta Montaña
+              </div>
+              <div class="info-item">
+                <i class="fas fa-eye"></i> Avistamiento
+              </div>
+              <div class="info-item">
+                <i class="fas fa-camera"></i> Fotografía
+              </div>
+            </div>
+            <a href="#" class="btn-secundario">Conocer Más</a>
+          </div>
+        </div>
+        
+        <div class="tarjeta-destino">
+          <div class="tarjeta-img">
+            <img src="imagen/img03.png" alt="Laguna Verde">
+            <div class="etiqueta-eco">Sitio Sagrado</div>
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Laguna Verde</h3>
+            <p>Ubicada en el volcán Azufral, esta laguna debe su color esmeralda a minerales volcánicos, creando un paisaje surrealista.</p>
+            <div class="info-eco">
+              <div class="info-item">
+                <i class="fas fa-mountain"></i> Volcánico
+              </div>
+              <div class="info-item">
+                <i class="fas fa-hiking"></i> Trekking
+              </div>
+              <div class="info-item">
+                <i class="fas fa-history"></i> Cultural
+              </div>
+            </div>
+            <a href="#" class="btn-secundario">Conocer Más</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo-seccion">Actidades Ecoturísticas</h2>
+      <div class="grid-actividades">
+        <div class="tarjeta-actividad">
+          <div class="icono-actividad">
+            <i class="fas fa-hiking"></i>
+          </div>
+          <h3>Senderismo Ecológico</h3>
+          <p>Recorridos guiados por senderos naturales con interpretación ambiental y avistamiento de flora y fauna nativa.</p>
+        </div>
+        
+        <div class="tarjeta-actividad">
+          <div class="icono-actividad">
+            <i class="fas fa-binoculars"></i>
+          </div>
+          <h3>Avistamiento de Aves</h3>
+          <p>Nariño alberga más de 800 especies de aves, incluyendo especies endémicas y migratorias.</p>
+        </div>
+        
+        <div class="tarjeta-actividad">
+          <div class="icono-actividad">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <h3>Turismo Comunitario</h3>
+          <p>Experiencias auténticas con comunidades locales que conservan tradiciones y conocimientos ancestrales.</p>
+        </div>
+        
+        <div class="tarjeta-actividad">
+          <div class="icono-actividad">
+            <i class="fas fa-camera"></i>
+          </div>
+          <h3>Fotografía de Naturaleza</h3>
+          <p>Talleres y recorridos especializados para capturar la belleza de los ecosistemas nariñenses.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo-seccion">Nuestros Principios Ecológicos</h2>
+      <div class="principios-contenido">
+        <div class="principios-texto">
+          <p>En CODETURIST operamos bajo estrictos principios de sostenibilidad para garantizar que nuestro turismo beneficie tanto a los visitantes como a los ecosistemas locales:</p>
+          <ul>
+            <li><strong>Conservación activa:</strong> Destinamos el 10% de nuestras ganancias a proyectos de conservación local</li>
+            <li><strong>Capacitación comunitaria:</strong> Entrenamos a guías locales en prácticas de turismo sostenible</li>
+            <li><strong>Huella de carbono:</strong> Compensamos las emisiones de nuestros tours mediante reforestación</li>
+            <li><strong>Economía circular:</strong> Priorizamos proveedores locales y productos biodegradables</li>
+            <li><strong>Educación ambiental:</strong> Incluimos componentes educativos en todas nuestras experiencias</li>
+            <li><strong>Límites de capacidad:</strong> Establecemos cupos máximos para proteger ecosistemas frágiles</li>
+          </ul>
+        </div>
+        <div class="principios-imagen">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Parque_Nacional_Natural_Chingaza.jpg/800px-Parque_Nacional_Natural_Chingaza.jpg" alt="Conservación de ecosistemas">
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo-seccion">Testimonios de Ecoturistas</h2>
+      <div class="grid-testimonios">
+        <div class="tarjeta-testimonio">
+          <div class="testimonio-texto">
+            "La experiencia en la Laguna de la Cocha fue increíble. Los guías conocían cada especie de ave y nos explicaron la importancia de conservar este ecosistema único. Aprendí más en un día que en años de documentales."
+          </div>
+          <div class="testimonio-autor">
+            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="María González">
+            <div class="autor-info">
+              <h4>María González</h4>
+              <p>Bogotá, Colombia</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tarjeta-testimonio">
+          <div class="testimonio-texto">
+            "Como fotógrafo de naturaleza, he visitado muchos lugares, pero el Volcán Galeras y sus alrededores ofrecen paisajes únicos. CODETURIST respeta los protocolos de conservación, algo que valoro enormemente."
+          </div>
+          <div class="testimonio-autor">
+            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Carlos Rodríguez">
+            <div class="autor-info">
+              <h4>Carlos Rodríguez</h4>
+              <p>Medellín, Colombia</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tarjeta-testimonio">
+          <div class="testimonio-texto">
+            "El turismo comunitario en Nariño nos permitió conectar con culturas ancestrales mientras contribuíamos directamente a su economía. Una experiencia transformadora que recomiendo a todos los viajeros conscientes."
+          </div>
+          <div class="testimonio-autor">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana Martínez">
+            <div class="autor-info">
+              <h4>Ana Martínez</h4>
+              <p>Cali, Colombia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo-seccion">Planifica tu Experiencia Ecológica</h2>
+      <div class="contacto-contenido">
+        <div class="info-contacto">
+          <h3>Información para Ecoturistas</h3>
+          <p><i class="fas fa-calendar-alt"></i> <strong>Temporadas recomendadas:</strong> Diciembre-Febrero y Junio-Agosto</p>
+          <p><i class="fas fa-hiking"></i> <strong>Niveles de dificultad:</strong> Desde principiante hasta experto</p>
+          <p><i class="fas fa-users"></i> <strong>Grupos reducidos:</strong> Máximo 8 personas por guía</p>
+          <p><i class="fas fa-leaf"></i> <strong>Equipo incluido:</strong> Bastones, binoculares y guías de campo</p>
+          <p><i class="fas fa-utensils"></i> <strong>Alimentación:</strong> Opciones vegetarianas y locales disponibles</p>
+          <p><i class="fas fa-shield-alt"></i> <strong>Seguridad:</strong> Guías certificados en primeros auxilios y rescate</p>
+        </div>
+        
+        <div class="formulario-contacto">
+          <h3>Solicita tu Aventura Ecológica</h3>
+          <form>
+            <div class="form-grupo">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" required>
+            </div>
+            
+            <div class="form-grupo">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" required>
+            </div>
+            
+            <div class="form-grupo">
+              <label for="destino">Destino de interés</label>
+              <select id="destino" required>
+                <option value="">Selecciona un destino</option>
+                <option value="cocha">Laguna de la Cocha</option>
+                <option value="galeras">Volcán Galeras</option>
+                <option value="verde">Laguna Verde</option>
+                <option value="personalizado">Experiencia Personalizada</option>
+              </select>
+            </div>
+            
+            <div class="form-grupo">
+              <label for="fecha">Fecha tentativa de viaje</label>
+              <input type="date" id="fecha" required>
+            </div>
+            
+            <div class="form-grupo">
+              <label for="participantes">Número de participantes</label>
+              <input type="number" id="participantes" min="1" max="12" required>
+            </div>
+            
+            <div class="form-grupo">
+              <label for="intereses">Intereses específicos</label>
+              <textarea id="intereses" rows="3" placeholder="Avistamiento de aves, fotografía, cultura local..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn-enviar">Solicitar Información</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-contenido">
+      <div class="footer-info">
+        <h3>CODETURIST</h3>
+        <p>Promoviendo el turismo sostenible en Nariño, Colombia</p>
+        <div class="redes-sociales">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-enlaces">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="ecoturismo.html">Ecoturismo</a></li>
+          <li><a href="turismo-extranjero.html">Turismo Extranjero</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-contacto">
+        <h4>Contacto</h4>
+        <p><i class="fas fa-envelope"></i> ecoturismo@codeturist.com</p>
+        <p><i class="fas fa-phone"></i> +57 123 456 7890</p>
+        <p><i class="fas fa-map-marker-alt"></i> Pasto, Nariño, Colombia</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>© 2025 CODETURIST | Turismo ecológico y sostenible - Todos los derechos reservados</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CODETURIST - Cultura y tradición del departamento de Nariño, Colombia. Descubre el Carnaval de Negros y Blancos, artesanías y gastronomía única.">
+  <title>Cultura y Tradición | CODETURIST Nariño</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Fuente y colores base mejorados */
+    :root {
+      --verde-prado: #27ae60;
+      --azul-celeste: #3498db;
+      --gris-claro: #f8f9fa;
+      --texto-oscuro: #2c3e50;
+      --sombra: 0 8px 30px rgba(0, 0, 0, 0.12);
+      --sombra-intensa: 0 15px 40px rgba(0, 0, 0, 0.2);
+      --dorado: #f1c40f;
+      --naranja: #e67e22;
+      --degradado-principal: linear-gradient(135deg, var(--verde-prado), var(--azul-celeste));
+      --degradado-secundario: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--gris-claro);
+      color: var(--texto-oscuro);
+      line-height: 1.7;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(46, 204, 113, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(93, 173, 226, 0.05) 0%, transparent 20%);
+    }
+
+    /* ENCABEZADO MEJORADO CON ANIMACIONES DEL PRIMER CÓDIGO */
+    header {
+      background: var(--degradado-principal);
+      color: white;
+      text-align: center;
+      padding: 1.8rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: fadeInDown 1.5s ease, breathing 6s ease-in-out infinite;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Efecto de respiración más lento y suave */
+    @keyframes breathing {
+      0%, 100% {
+        opacity: 1;
+        border-radius: 0% 0% 0% 0%;
+        transform: scale(1);
+      }
+      25% {
+        opacity: 0.97;
+        border-radius: 5% 8% 10% 6%;
+        transform: scale(1.002);
+      }
+      50% {
+        opacity: 0.99;
+        border-radius: 8% 5% 6% 10%;
+        transform: scale(1.005);
+      }
+      75% {
+        opacity: 0.97;
+        border-radius: 6% 10% 8% 5%;
+        transform: scale(1.002);
+      }
+    }
+
+    header .logo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin: 0;
+      letter-spacing: 1.5px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      font-weight: 700;
+      animation: textGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes textGlow {
+      0%, 100% {
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        transform: scale(1);
+      }
+      50% {
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.3), 0 0 15px rgba(255,255,255,0.2);
+        transform: scale(1.01);
+      }
+    }
+
+    header .logo p {
+      margin: 0.5rem 0 0 0;
+      font-size: 1.2rem;
+      font-weight: 400;
+      opacity: 0.9;
+      animation: slideIn 1.8s ease-out;
+    }
+
+    /* Navegación mejorada con transiciones más lentas */
+    nav ul {
+      list-style: none;
+      margin: 1.8rem 0 0 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: rgba(255, 255, 255, 0.1);
+      font-weight: 500;
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1.2s ease-out;
+      animation-fill-mode: both;
+    }
+
+    nav ul li:nth-child(1) a { animation-delay: 0.2s; }
+    nav ul li:nth-child(2) a { animation-delay: 0.4s; }
+    nav ul li:nth-child(3) a { animation-delay: 0.6s; }
+    nav ul li:nth-child(4) a { animation-delay: 0.8s; }
+    nav ul li:nth-child(5) a { animation-delay: 1.0s; }
+    nav ul li:nth-child(6) a { animation-delay: 1.2s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    nav ul li a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.6s;
+    }
+
+    nav ul li a:hover::before,
+    nav ul li a.activo::before {
+      left: 100%;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.activo {
+      background: white;
+      color: var(--verde-prado);
+      font-weight: 600;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Animaciones mejoradas y más lentas */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hero principal mejorado */
+    .hero {
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+        url("imagen/carna.png") center/cover;
+      color: white;
+      text-align: center;
+      padding: 10rem 1.5rem;
+      position: relative;
+      animation: fadeIn 1.5s ease;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--degradado-principal);
+      opacity: 0.3;
+      z-index: 1;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      animation: slideInUp 1s ease;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero-text p {
+      font-size: 1.6rem;
+      margin-bottom: 2.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: slideInUp 1.2s ease;
+      font-weight: 400;
+      opacity: 0.95;
+    }
+
+    .btn {
+      background: var(--degradado-principal);
+      color: white;
+      text-decoration: none;
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: inline-block;
+      font-size: 1.3rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      animation: pulse 2s infinite;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+    }
+
+    .btn:hover {
+      transform: translateY(-7px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      animation: none;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: 0.6s;
+    }
+
+    .btn:hover::after {
+      left: 100%;
+    }
+
+    /* Secciones de contenido mejoradas */
+    main {
+      max-width: 1300px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .seccion {
+      background: white;
+      border-radius: 20px;
+      box-shadow: var(--sombra);
+      padding: 4rem;
+      margin-bottom: 4rem;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(40px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .seccion::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--degradado-principal);
+      transition: width 0.4s ease;
+    }
+
+    .seccion:hover::before {
+      width: 8px;
+    }
+
+    .seccion.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .seccion:hover {
+      transform: translateY(-12px);
+      box-shadow: var(--sombra-intensa);
+    }
+
+    .titulo-seccion {
+      color: var(--texto-oscuro);
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 3rem;
+      position: relative;
+      font-weight: 700;
+    }
+
+    .titulo-seccion::after {
+      content: '';
+      display: block;
+      width: 120px;
+      height: 6px;
+      background: var(--degradado-principal);
+      margin: 1.5rem auto;
+      border-radius: 3px;
+      animation: expandWidth 1s ease;
+    }
+
+    /* Sección de cultura mejorada */
+    .cultura-contenido {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .cultura-texto ul {
+      background: linear-gradient(135deg, #e8f8f5, #d1f2eb);
+      padding: 2.5rem;
+      border-radius: 15px;
+      list-style: none;
+      box-shadow: var(--sombra);
+      border-left: 5px solid var(--verde-prado);
+    }
+
+    .cultura-texto li {
+      margin: 1.2rem 0;
+      line-height: 1.7;
+      padding-left: 2.5rem;
+      position: relative;
+      transition: transform 0.3s;
+      font-weight: 500;
+    }
+
+    .cultura-texto li:hover {
+      transform: translateX(10px);
+    }
+
+    .cultura-texto li::before {
+      content: '★';
+      color: var(--dorado);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      font-size: 1.4rem;
+    }
+
+    .cultura-imagen {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: var(--sombra-intensa);
+      transition: all 0.4s ease;
+    }
+
+    .cultura-imagen::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      background: linear-gradient(transparent, rgba(0,0,0,0.3));
+      border-radius: 0 0 20px 20px;
+    }
+
+    .cultura-imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.8s ease;
+    }
+
+    .cultura-imagen:hover {
+      transform: scale(1.02);
+    }
+
+    .cultura-imagen:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Grid de elementos culturales mejorado */
+    .grid-cultural {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 3rem;
+      margin-top: 2.5rem;
+    }
+
+    .tarjeta-cultural {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .tarjeta-cultural::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--degradado-principal);
+      opacity: 0;
+      transition: opacity 0.4s;
+      z-index: 1;
+    }
+
+    .tarjeta-cultural:hover::before {
+      opacity: 0.1;
+    }
+
+    .tarjeta-cultural:hover {
+      transform: translateY(-20px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .tarjeta-img {
+      height: 280px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .tarjeta-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .tarjeta-cultural:hover .tarjeta-img img {
+      transform: scale(1.2);
+    }
+
+    .tarjeta-img::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    }
+
+    .tarjeta-contenido {
+      padding: 2.2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tarjeta-contenido h3 {
+      color: var(--verde-prado);
+      margin-top: 0;
+      font-size: 1.7rem;
+      transition: color 0.3s;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    .tarjeta-cultural:hover .tarjeta-contenido h3 {
+      color: var(--azul-celeste);
+    }
+
+    .tarjeta-contenido p {
+      color: var(--texto-oscuro);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* Sección de gastronomía mejorada */
+    .gastronomia-contenido {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .platos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .plato {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: var(--sombra);
+      transition: transform 0.4s, box-shadow 0.4s;
+      text-align: center;
+      border-top: 4px solid var(--azul-celeste);
+    }
+
+    .plato:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .plato h4 {
+      color: var(--azul-celeste);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .plato p {
+      font-size: 1rem;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    /* Sección de comunidades mejorada */
+    .comunidades-contenido {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .comunidad-info {
+      background: linear-gradient(135deg, #e8f8f5, #d1f2eb);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: var(--sombra);
+      border-left: 5px solid var(--azul-celeste);
+    }
+
+    .comunidad-info h3 {
+      color: var(--azul-celeste);
+      margin-bottom: 1.8rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    .comunidad-info ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .comunidad-info li {
+      margin: 1.2rem 0;
+      padding-left: 2.5rem;
+      position: relative;
+      font-weight: 500;
+    }
+
+    .comunidad-info li::before {
+      content: '🌿';
+      position: absolute;
+      left: 0;
+      font-size: 1.3rem;
+    }
+
+    /* Galería interactiva mejorada */
+    .galeria-interactiva {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .item-galeria {
+      height: 240px;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .item-galeria img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .item-galeria:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .item-galeria:hover img {
+      transform: scale(1.15);
+    }
+
+    .item-galeria:nth-child(1) {
+      grid-column: span 2;
+    }
+
+    .item-galeria:nth-child(4) {
+      grid-column: span 2;
+    }
+
+    /* Contador de estadísticas mejorado */
+    .estadisticas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.5rem;
+      margin: 4rem 0;
+    }
+
+    .estadistica {
+      text-align: center;
+      padding: 2.5rem;
+      background: white;
+      border-radius: 20px;
+      box-shadow: var(--sombra);
+      transition: transform 0.4s, box-shadow 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .estadistica::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--degradado-principal);
+    }
+
+    .estadistica:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .contador {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--verde-prado);
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .estadistica p {
+      font-size: 1.2rem;
+      color: var(--texto-oscuro);
+      margin: 0;
+      font-weight: 500;
+    }
+
+    /* Animaciones mejoradas */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); }
+      50% { transform: scale(1.05); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); }
+      100% { transform: scale(1); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); }
+    }
+
+    @keyframes expandWidth {
+      from { width: 0; }
+      to { width: 120px; }
+    }
+
+    /* Pie de página mejorado */
+    footer {
+      background: var(--degradado-principal);
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+      margin-top: 5rem;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+      background-size: cover;
+    }
+
+    .footer-contenido {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      text-align: left;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-info h3 {
+      color: white;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .footer-info p {
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    .redes-sociales {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .redes-sociales a {
+      color: white;
+      background: rgba(255, 255, 255, 0.15);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+      font-size: 1.3rem;
+      backdrop-filter: blur(5px);
+    }
+
+    .redes-sociales a:hover {
+      background: white;
+      color: var(--verde-prado);
+      transform: translateY(-8px) scale(1.1);
+    }
+
+    .footer-enlaces h4,
+    .footer-contacto h4 {
+      color: white;
+      margin-bottom: 1.8rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .footer-enlaces ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-enlaces li {
+      margin-bottom: 1rem;
+    }
+
+    .footer-enlaces a {
+      color: rgba(255, 255, 255, 0.85);
+      transition: all 0.3s ease;
+      position: relative;
+      padding-left: 1.5rem;
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    .footer-enlaces a::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      transition: transform 0.3s;
+      font-weight: bold;
+    }
+
+    .footer-enlaces a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .footer-enlaces a:hover::before {
+      transform: translateX(5px);
+    }
+
+    .footer-contacto p {
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+    }
+
+    .footer-contacto i {
+      margin-right: 1.2rem;
+      width: 20px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .footer-copy {
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      padding-top: 2.5rem;
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 1rem;
+      opacity: 0.8;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Adaptabilidad mejorada */
+    @media (max-width: 1024px) {
+      .hero-text h2 {
+        font-size: 3.2rem;
+      }
+      
+      .hero-text p {
+        font-size: 1.4rem;
+      }
+      
+      .seccion {
+        padding: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 7rem 1rem;
+      }
+
+      .hero-text h2 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-text p {
+        font-size: 1.2rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav ul li a {
+        display: block;
+        width: 220px;
+        margin: 0 auto;
+      }
+
+      .cultura-contenido,
+      .gastronomia-contenido,
+      .comunidades-contenido {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .platos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .galeria-interactiva {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .item-galeria:nth-child(1),
+      .item-galeria:nth-child(4) {
+        grid-column: span 1;
+      }
+
+      .footer-contenido {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+      }
+
+      .redes-sociales {
+        justify-content: center;
+      }
+      
+      .footer-enlaces ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .footer-contacto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header .logo h1 {
+        font-size: 2.2rem;
+      }
+      
+      .titulo-seccion {
+        font-size: 2.2rem;
+      }
+      
+      .seccion {
+        padding: 2rem;
+      }
+      
+      .grid-cultural {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>CODETURIST</h1>
+      <p>Entre montañas y raíces, nace el turismo del futuro.</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="ecoturismo.html">Ecoturismo</a></li>
+        <li><a href="cultura-tradicion.html" class="activo">Cultura y Tradición</a></li>
+        <li><a href="ebike.html">Ebike</a></li>
+        <li><a href="turismo-extranjero.html">Turismo Extranjero</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Cultura y Tradición Nariñense</h2>
+      <p>Descubre la riqueza cultural, las tradiciones ancestrales y la identidad única del departamento de Nariño</p>
+      <a href="#carnaval" class="btn">Explorar Patrimonio Cultural</a>
+    </div>
+  </section>
+
+  <main>
+    <section class="seccion intro visible">
+      <h2 class="titulo-seccion">Patrimonio Cultural de Nariño</h2>
+      <p>
+        Nariño es tierra de contrastes, donde se fusionan tradiciones indígenas, mestizas y afrodescendientes. 
+        Su capital, San Juan de Pasto, es conocida como la "Ciudad Sorpresa" por su rica herencia cultural 
+        que se manifiesta en festividades, artesanías, gastronomía y costumbres ancestrales.
+      </p>
+      <p>
+        En CODETURIST valoramos y promovemos el respeto por las tradiciones locales, ofreciendo experiencias 
+        auténticas que permiten a nuestros visitantes conectarse con la esencia cultural nariñense.
+      </p>
+    </section>
+
+    <section id="carnaval" class="seccion">
+      <h2 class="titulo-seccion">Carnaval de Negros y Blancos</h2>
+      <div class="cultura-contenido">
+        <div class="cultura-texto">
+          <p>Declarado Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO en 2009, el Carnaval de Negros y Blancos es la festividad más importante del sur de Colombia.</p>
+          <ul>
+            <li><strong>Origen multicultural:</strong> Fusiona tradiciones indígenas, españolas y afrodescendientes</li>
+            <li><strong>Fecha:</strong> Se celebra del 2 al 7 de enero de cada año</li>
+            <li><strong>Día de Negros:</strong> 5 de enero - Homenaje a la libertad de los esclavos</li>
+            <li><strong>Día de Blancos:</strong> 6 de enero - Celebración con talco, pintura y alegría</li>
+            <li><strong>Desfile de Carrozas:</strong> Impresionantes esculturas en icopor que recorren la ciudad</li>
+            <li><strong>Artesanías:</strong> Muestra del talento y creatividad de los artistas locales</li>
+          </ul>
+          <p>Esta festividad representa la convivencia pacífica entre diferentes culturas y es un símbolo de la identidad pastusa.</p>
+        </div>
+        <div class="cultura-imagen">
+          <img src="imagen/carna.png" alt="Carnaval de Negros y Blancos">
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo-seccion">Artesanías y Expresiones Artísticas</h2>
+      <div class="grid-cultural">
+        <div class="tarjeta-cultural">
+          <div class="tarjeta-img">
+            <img src="imagen/arte.png" alt="Trabajo en Madera">
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Trabajo en Madera</h3>
+            <p>Artesanía tradicional que utiliza maderas locales para crear objetos decorativos y utilitarios con diseños que reflejan la identidad cultural nariñense.</p>
+          </div>
+        </div>
+        
+        <div class="tarjeta-cultural">
+          <div class="tarjeta-img">
+            <img src="imagen/textq.png" alt="Textilería Indígena">
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Textilería Indígena</h3>
+            <p>Las comunidades indígenas Pastos y Quillacingas mantienen vivas técnicas ancestrales de tejido en lana y algodón con simbolismos culturales únicos.</p>
+          </div>
+        </div>
+        
+        <div class="tarjeta-cultural">
+          <div class="tarjeta-img">
+            <img src="imagen/danzas.png" alt="Danzas Tradicionales">
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Danzas Tradicionales</h3>
+            <p> Las danzas tradicionales de Nariño reflejan la mezcla de culturas indígena, española y africana. Entre las más destacadas están La Guaneña y El Bambuco Fiestero, que expresan alegría, identidad y tradición del pueblo nariñense.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo-seccion">Gastronomía Nariñense</h2>
+      <div class="gastronomia-contenido">
+        <div class="platos-grid">
+          <div class="plato">
+            <h4>Cuy Asado</h4>
+            <p>Plato tradicional preparado con cuy (conejillo de indias) asado, acompañado de papa y ají.</p>
+          </div>
+          <div class="plato">
+            <h4>Empanadas de Añejo</h4>
+            <p>Empanadas de masa de maíz fermentado rellenas de arroz y carne, fritas en aceite bien caliente.</p>
+          </div>
+          <div class="plato">
+            <h4>Helado de Paila</h4>
+            <p>Postre tradicional hecho en pailas de bronce, con sabores frutales naturales de la región.</p>
+          </div>
+          <div class="plato">
+            <h4>Tamales Nariñenses</h4>
+            <p>Tamales envueltos en hojas de plátano con masa de maíz, carne de cerdo y verduras.</p>
+          </div>
+        </div>
+        <div class="cultura-imagen">
+          <img src="imagen/87943tir.jpg" alt="Gastronomía Nariñense">
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo-seccion">Comunidades Indígenas</h2>
+      <div class="comunidades-contenido">
+        <div class="comunidad-info">
+          <h3>Guardianes de Saberes Ancestrales</h3>
+          <p>Nariño alberga diversas comunidades indígenas que preservan conocimientos ancestrales:</p>
+          <ul>
+            <li><strong>Comunidad Pasto:</strong> Habitantes ancestrales de la región, expertos en agricultura andina</li>
+            <li><strong>Comunidad Quillacinga:</strong> Conocedores de medicina tradicional y rituales sagrados</li>
+            <li><strong>Resguardos Indígenas:</strong> Territorios donde se practica y preserva la cultura originaria</li>
+            <li><strong>Lenguas Nativas:</strong> Preservación del quechua y otras lenguas ancestrales</li>
+            <li><strong>Cosmovisión Andina:</strong> Relación armoniosa con la naturaleza y el territorio</li>
+          </ul>
+          <p>Nuestros tours culturales incluyen visitas respetuosas a estas comunidades, generando intercambios culturales auténticos.</p>
+        </div>
+        <div class="cultura-imagen">
+          <img src="imagen/indi.jpg" alt="Comunidad Indígena">
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo-seccion">Festividades y Celebraciones</h2>
+      <div class="grid-cultural">
+        <div class="tarjeta-cultural">
+          <div class="tarjeta-img">
+            <img src="imagen/lajas88.png" alt="Fiestas Religiosas">
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Semana Santa</h3>
+            <p>Procesiones y celebraciones católicas que mezclan la fe con tradiciones locales.</p>
+          </div>
+        </div>
+        
+        <div class="tarjeta-cultural">
+          <div class="tarjeta-img">
+            <img src="imagen/naza.png" alt="Música y Danza">
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Fiestas en honor a Jesús Nazareno</h3>
+            <p>Realizadas entre enero y febrero, reúnen a miles de devotos en misas, procesiones y eventos culturales para rendir homenaje a la imagen de Jesús Nazareno, símbolo de fe y esperanza.</p>
+          </div>
+        </div>
+        
+        <div class="tarjeta-cultural">
+          <div class="tarjeta-img">
+            <img src="imagen/payaip.png" alt="Festivales Agrícolas">
+          </div>
+          <div class="tarjeta-contenido">
+            <h3>Fiesta del Señor de Payán</h3>
+            <p>La comunidad expresa su fe a través de misas, danzas y peregrinaciones, mezclando religiosidad y cultura local.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo-seccion">Galería Cultural</h2>
+      <div class="galeria-interactiva">
+        <div class="item-galeria">
+          <img src="imagen/car.png" alt="Carnaval de Negros y Blancos">
+        </div>
+        <div class="item-galeria">
+          <img src="imagen/arte.png" alt="Trabajo en Madera">
+        </div>
+        <div class="item-galeria">
+          <img src="imagen/cuoivkwedj.jpg" alt="Gastronomía">
+        </div>
+        <div class="item-galeria">
+          <img src="imagen/ind.jpg" alt="Comunidades Indígenas">
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2 class="titulo-seccion">Nuestro Compromiso Cultural</h2>
+      <div class="estadisticas">
+        <div class="estadistica">
+          <div class="contador" data-target="15">0</div>
+          <p>Comunidades Apoyadas</p>
+        </div>
+        <div class="estadistica">
+          <div class="contador" data-target="50">0</div>
+          <p>Artesanos Beneficiados</p>
+        </div>
+        <div class="estadistica">
+          <div class="contador" data-target="25">0</div>
+          <p>Talleres Culturales</p>
+        </div>
+        <div class="estadistica">
+          <div class="contador" data-target="98">0</div>
+          <p>Satisfacción Cultural</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-contenido">
+      <div class="footer-info">
+        <h3>CODETURIST</h3>
+        <p>Promoviendo el turismo sostenible en Nariño, Colombia</p>
+        <div class="redes-sociales">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-enlaces">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="ecoturismo.html">Ecoturismo</a></li>
+          <li><a href="cultura.html">Cultura y Tradición</a></li>
+          <li><a href="turismo-extranjero.html">Turismo Extranjero</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-contacto">
+        <h4>Contacto</h4>
+        <p><i class="fas fa-envelope"></i> cultura@codeturist.com</p>
+        <p><i class="fas fa-phone"></i> +57 123 456 7890</p>
+        <p><i class="fas fa-map-marker-alt"></i> Pasto, Nariño, Colombia</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>© 2025 CODETURIST | Turismo sostenible en Nariño - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    // Animación de aparición de secciones al hacer scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const secciones = document.querySelectorAll('.seccion');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      secciones.forEach(seccion => {
+        if (!seccion.classList.contains('visible')) {
+          observer.observe(seccion);
+        }
+      });
+
+      // Animación de contadores
+      const contadores = document.querySelectorAll('.contador');
+      let animado = false;
+      
+      function animarContadores() {
+        if (!animado) {
+          contadores.forEach(contador => {
+            const objetivo = +contador.getAttribute('data-target');
+            const incremento = objetivo / 100;
+            let valor = 0;
+            
+            const timer = setInterval(() => {
+              valor += incremento;
+              if (valor >= objetivo) {
+                valor = objetivo;
+                clearInterval(timer);
+              }
+              contador.textContent = Math.ceil(valor) + (contador.getAttribute('data-target') === '98' ? '%' : '+');
+            }, 20);
+          });
+          animado = true;
+        }
+      }
+      
+      // Observar la sección de estadísticas para activar contadores
+      const seccionEstadisticas = document.querySelector('.estadisticas').parentElement;
+      const observerEstadisticas = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animarContadores();
+          }
+        });
+      }, {
+        threshold: 0.5
+      });
+      
+      observerEstadisticas.observe(seccionEstadisticas);
+    });
+  </script>
+</body>
+</html>

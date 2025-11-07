@@ -1,0 +1,164 @@
+/* Fuente y colores base */
+:root {
+  --verde-prado: #2ecc71;
+  --azul-celeste: #5dade2;
+  --gris-claro: #f4f9f8;
+  --texto-oscuro: #2f2f2f;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--gris-claro);
+  color: var(--texto-oscuro);
+}
+
+/* Encabezado */
+header {
+  background: linear-gradient(90deg, var(--verde-prado), var(--azul-celeste));
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+header .logo h1 {
+  font-size: 2rem;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+header .logo p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Navegación */
+nav ul {
+  list-style: none;
+  margin: 1rem 0 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 5px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: 25px;
+  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: white;
+  color: var(--verde-prado);
+  font-weight: 600;
+}
+
+/* Hero principal */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://upload.wikimedia.org/wikipedia/commons/8/84/Volc%C3%A1n_Galeras_2020.jpg") center/cover;
+  color: white;
+  text-align: center;
+  padding: 5rem 1.5rem;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  background-color: var(--verde-prado);
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--azul-celeste);
+}
+
+/* Secciones de contenido */
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.intro h2 {
+  color: var(--verde-prado);
+  text-align: center;
+}
+
+.intro p {
+  text-align: justify;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.tecnico h3 {
+  color: var(--azul-celeste);
+  margin-top: 2rem;
+}
+
+.tecnico ul {
+  background: #e8f8f5;
+  padding: 1.5rem;
+  border-radius: 10px;
+  list-style: none;
+}
+
+.tecnico li {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+/* Pie de página */
+footer {
+  background: var(--verde-prado);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-weight: 500;
+}
+
+/* Adaptabilidad */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li a {
+    display: block;
+  }
+}
